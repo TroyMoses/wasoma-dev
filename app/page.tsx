@@ -1,10 +1,19 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { AnimatedSection } from "@/components/animated-section"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, Droplets, Cable, Cog, PowerIcon as Generator, Shield, Hammer, Sparkles } from 'lucide-react'
-import { SiteFooter } from "@/components/site-footer"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { AnimatedSection } from "@/components/animated-section";
+import { Badge } from "@/components/ui/badge";
+import {
+  CheckCircle2,
+  Droplets,
+  Cable,
+  Cog,
+  PowerIcon as Generator,
+  Shield,
+  Hammer,
+  Sparkles,
+} from "lucide-react";
+import { SiteFooter } from "@/components/site-footer";
 
 export default function HomePage() {
   return (
@@ -13,30 +22,45 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-red-100/60 via-transparent to-transparent" />
         <div className="container grid lg:grid-cols-2 gap-8 items-center py-16 md:py-24">
           <AnimatedSection>
-            <Badge className="mb-4 bg-red-600 text-white">Trusted Engineering Services</Badge>
+            <Badge className="mb-4 bg-red-600 text-white">
+              Trusted Engineering Services
+            </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-red-700 via-red-600 to-neutral-800 bg-clip-text text-transparent">
                 Reliable motor and electrical engineering services
               </span>
             </h1>
             <p className="mt-4 text-muted-foreground text-lg">
-              We specialize in motor rewinding, water pump repair, electrical installations, generator service, welding,
-              fabrication and more. Quality workmanship you can trust.
+              We specialize in motor rewinding, water pump repair, electrical
+              installations, generator service, welding, fabrication and more.
+              Quality workmanship you can trust.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+              <Button
+                asChild
+                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+              >
                 <Link href="/#services" className="cursor-pointer">
                   Explore Services
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="cursor-pointer border-red-200 text-red-700 hover:bg-red-50">
+              <Button
+                asChild
+                variant="outline"
+                className="cursor-pointer border-red-200 text-red-700 hover:bg-red-50"
+              >
                 <Link href="/contact" className="cursor-pointer">
                   Get a Quote
                 </Link>
               </Button>
             </div>
             <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
-              {["Experienced engineers", "Fast turnaround", "Genuine parts", "Warranty on service"].map((t) => (
+              {[
+                "Experienced engineers",
+                "Fast turnaround",
+                "Genuine parts",
+                "Warranty on service",
+              ].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-red-600" />
                   {t}
@@ -58,7 +82,9 @@ export default function HomePage() {
                 <Sparkles className="text-red-500" />
                 <div className="text-sm">
                   <div className="font-medium">ISO-inspired workmanship</div>
-                  <div className="text-muted-foreground">Quality you can see</div>
+                  <div className="text-muted-foreground">
+                    Quality you can see
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,8 +95,12 @@ export default function HomePage() {
       <section id="services" className="py-16 md:py-24">
         <div className="container">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our Services</h2>
-            <p className="mt-2 text-muted-foreground">From diagnostics to full rebuilds, we&apos;ve got you covered.</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Our Services
+            </h2>
+            <p className="mt-2 text-muted-foreground">
+              From diagnostics to full rebuilds, we&apos;ve got you covered.
+            </p>
           </AnimatedSection>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
@@ -84,6 +114,18 @@ export default function HomePage() {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="cursor-pointer border-red-200 text-red-700 hover:bg-red-50"
+            >
+              <Link href="/services" className="cursor-pointer">
+                More Services
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -100,10 +142,13 @@ export default function HomePage() {
             />
           </AnimatedSection>
           <AnimatedSection delay={0.05}>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Built on expertise and integrity</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Built on expertise and integrity
+            </h2>
             <p className="mt-2 text-muted-foreground">
-              Wasoma Engineering brings years of experience in rotating machinery and electrical systems. Our team prides
-              itself on precision, safety, and customer satisfaction.
+              Wasoma Engineering brings years of experience in rotating
+              machinery and electrical systems. Our team prides itself on
+              precision, safety, and customer satisfaction.
             </p>
             <div className="mt-6 grid gap-3">
               {[
@@ -118,16 +163,35 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6">
+              <Button
+                asChild
+                size="lg"
+                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+              >
+                <Link href="/about" className="cursor-pointer">
+                  More About Us
+                </Link>
+              </Button>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-gradient-to-b from-white to-red-50/60">
         <div className="container text-center">
-          <h3 className="text-2xl md:text-3xl font-bold">Ready to get started?</h3>
-          <p className="mt-2 text-muted-foreground">Tell us about your project and we&apos;ll get back to you shortly.</p>
+          <h3 className="text-2xl md:text-3xl font-bold">
+            Ready to get started?
+          </h3>
+          <p className="mt-2 text-muted-foreground">
+            Tell us about your project and we&apos;ll get back to you shortly.
+          </p>
           <div className="mt-6">
-            <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+            <Button
+              asChild
+              size="lg"
+              className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+            >
               <Link href="/contact" className="cursor-pointer">
                 Contact Us
               </Link>
@@ -137,7 +201,7 @@ export default function HomePage() {
       </section>
       <SiteFooter />
     </div>
-  )
+  );
 }
 
 const services = [
@@ -171,4 +235,4 @@ const services = [
     desc: "Rotating equipment, balancing, bearings, alignments.",
     icon: <Shield className="w-6 h-6" />,
   },
-]
+];

@@ -1,19 +1,34 @@
-"use client"
+"use client";
 
-import { useActionState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { updateContactAction } from "@/app/actions"
-import { toast } from "sonner"
+import { useActionState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { updateContactAction } from "@/app/actions";
+import { toast } from "sonner";
 
-type State = { ok?: boolean; error?: string }
+type State = { ok?: boolean; error?: string };
 
-export function UpdateContactStatusForm({ id, currentStatus }: { id: string; currentStatus: string }) {
-  const [state, formAction, pending] = useActionState<State, FormData>(updateContactAction, {})
+export function UpdateContactStatusForm({
+  id,
+  currentStatus,
+}: {
+  id: string;
+  currentStatus: string;
+}) {
+  const [state, formAction, pending] = useActionState<State, FormData>(
+    updateContactAction,
+    {}
+  );
   useEffect(() => {
-    if (state?.ok) toast.success("Contact updated")
-    if (state?.error) toast.error(state.error)
-  }, [state])
+    if (state?.ok) toast.success("Contact updated");
+    if (state?.error) toast.error(state.error);
+  }, [state]);
 
   return (
     <form action={formAction} className="inline-flex items-center gap-2">
@@ -34,9 +49,14 @@ export function UpdateContactStatusForm({ id, currentStatus }: { id: string; cur
           </SelectItem>
         </SelectContent>
       </Select>
-      <Button type="submit" size="sm" className="bg-red-600 hover:bg-red-700 text-white cursor-pointer" disabled={pending}>
+      <Button
+        type="submit"
+        size="sm"
+        className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+        disabled={pending}
+      >
         Save
       </Button>
     </form>
-  )
+  );
 }

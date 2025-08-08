@@ -1,13 +1,24 @@
-import { listContacts, deleteContactAction, updateContactAction } from "@/app/actions"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
-import { DeleteContactButton } from "./remove-contact-button"
-import { UpdateContactStatusForm } from "./update-contact-form"
+import {
+  listContacts,
+  deleteContactAction,
+  updateContactAction,
+} from "@/app/actions";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { DeleteContactButton } from "./remove-contact-button";
+import { UpdateContactStatusForm } from "./update-contact-form";
 
 export default async function ContactsPage() {
-  const contacts = await listContacts()
+  const contacts = await listContacts();
 
   return (
     <Card>
@@ -36,22 +47,40 @@ export default async function ContactsPage() {
                   <TableCell>{c.email}</TableCell>
                   <TableCell>{c.phone || "-"}</TableCell>
                   <TableCell>{c.subject || "-"}</TableCell>
-                  <TableCell className="hidden md:table-cell max-w-[300px] truncate">{c.message}</TableCell>
+                  <TableCell className="hidden md:table-cell max-w-[300px] truncate">
+                    {c.message}
+                  </TableCell>
                   <TableCell>
-                    <Badge variant={c.status === "read" ? "secondary" : c.status === "archived" ? "outline" : "default"}>
+                    <Badge
+                      variant={
+                        c.status === "read"
+                          ? "secondary"
+                          : c.status === "archived"
+                          ? "outline"
+                          : "default"
+                      }
+                    >
                       {c.status || "new"}
                     </Badge>
                   </TableCell>
-                  <TableCell>{new Date(c.created_at).toLocaleString()}</TableCell>
+                  <TableCell>
+                    {new Date(c.created_at).toLocaleString()}
+                  </TableCell>
                   <TableCell className="text-right space-x-2">
-                    <UpdateContactStatusForm id={c.id} currentStatus={c.status || "new"} />
+                    <UpdateContactStatusForm
+                      id={c.id}
+                      currentStatus={c.status || "new"}
+                    />
                     <DeleteContactButton id={c.id} />
                   </TableCell>
                 </TableRow>
               ))}
               {contacts.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-muted-foreground">
+                  <TableCell
+                    colSpan={8}
+                    className="text-center text-muted-foreground"
+                  >
                     No messages found.
                   </TableCell>
                 </TableRow>
@@ -61,5 +90,5 @@ export default async function ContactsPage() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,11 +1,18 @@
-import { listOrders } from "@/app/actions"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { CreateOrderDialog } from "./order-create-dialog"
-import { Button } from "@/components/ui/button"
+import { listOrders } from "@/app/actions";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { CreateOrderDialog } from "./order-create-dialog";
+import { Button } from "@/components/ui/button";
 
 export default async function OrdersPage() {
-  const orders = await listOrders()
+  const orders = await listOrders();
   return (
     <Card>
       <CardHeader className="flex items-center justify-between flex-row">
@@ -27,15 +34,31 @@ export default async function OrdersPage() {
             <TableBody>
               {orders.map((o) => (
                 <TableRow key={o.id}>
-                  <TableCell className="font-medium">{o.customer_name}</TableCell>
-                  <TableCell className="max-w-[280px] truncate">{o.description || "-"}</TableCell>
+                  <TableCell className="font-medium">
+                    {o.customer_name}
+                  </TableCell>
+                  <TableCell className="max-w-[280px] truncate">
+                    {o.description || "-"}
+                  </TableCell>
                   <TableCell>{o.status}</TableCell>
-                  <TableCell className="text-right">${o.total_amount.toFixed(2)}</TableCell>
                   <TableCell className="text-right">
-                    <Button variant="outline" size="sm" className="cursor-pointer mr-2" disabled>
+                    ${o.total_amount.toFixed(2)}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="cursor-pointer mr-2"
+                      disabled
+                    >
                       View
                     </Button>
-                    <Button variant="destructive" size="sm" className="cursor-pointer" disabled>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      className="cursor-pointer"
+                      disabled
+                    >
                       Delete
                     </Button>
                   </TableCell>
@@ -43,7 +66,10 @@ export default async function OrdersPage() {
               ))}
               {orders.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={5} className="text-center text-muted-foreground">
+                  <TableCell
+                    colSpan={5}
+                    className="text-center text-muted-foreground"
+                  >
                     No orders yet.
                   </TableCell>
                 </TableRow>
@@ -53,5 +79,5 @@ export default async function OrdersPage() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
