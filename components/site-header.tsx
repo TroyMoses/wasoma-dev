@@ -20,7 +20,7 @@ const nav = [
 export function SiteHeader() {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="px-10 sticky top-0 z-40 w-full border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between">
         <Brand />
         <nav className="hidden md:flex items-center gap-6">
@@ -29,7 +29,7 @@ export function SiteHeader() {
               key={n.href}
               href={n.href}
               className={cn(
-                "text-sm text-muted-foreground hover:text-red-600 transition-colors cursor-pointer",
+                "text-normal text-muted-foreground hover:text-red-600 transition-colors cursor-pointer",
                 pathname === n.href && "text-red-700 font-semibold"
               )}
             >

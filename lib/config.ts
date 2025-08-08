@@ -1,4 +1,4 @@
-export const APP_NAME = "Wasoma Engineering Company Limited"
+export const APP_NAME = "Wasoma Engineering Company Ltd"
 
 export const API_BASE_URL =
   (typeof process !== "undefined" &&
@@ -6,7 +6,7 @@ export const API_BASE_URL =
   "http://localhost:8000"
 
 export const COMPANY_CONTACT = {
-  phone: "+255 700 000 000",
-  email: "info@wasoma.co.tz",
-  address: "P.O. Box 123, Dar es Salaam, Tanzania",
+  phone: "+256 705 785 716",
+  email: "info@wasomaengineering.com",
+  address: "P.O. Box 123, Kampala, Uganda",
 }

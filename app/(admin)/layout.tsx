@@ -1,10 +1,20 @@
-"use client"
+"use client";
 
-import { SidebarProvider } from "@/components/ui/sidebar"
-import { AdminShell } from "@/components/app-sidebar"
-import { Toaster } from "sonner"
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AdminShell } from "@/components/app-sidebar";
+import { Toaster } from "sonner";
+import { Montserrat } from "next/font/google";
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     // Theme the sidebar via its CSS variables (dark with red accents) per the component API.
     <div
@@ -23,12 +33,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           ["--sidebar-ring" as any]: "0 72% 45%",
         } as React.CSSProperties
       }
-      className="min-h-screen"
+      className={`${montserrat.className} min-h-screen`}
     >
       <SidebarProvider>
         <AdminShell>{children}</AdminShell>
         <Toaster richColors position="top-center" />
       </SidebarProvider>
     </div>
-  )
+  );
 }

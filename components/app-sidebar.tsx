@@ -29,8 +29,6 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Brand } from "./brand";
-import { cn } from "@/lib/utils";
 
 const items = [
   { title: "Overview", href: "/dashboard", icon: Home },
@@ -50,12 +48,13 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
-        <div className="px-2 py-1 mb-[40px]"></div>
+        <div className="px-2 mt-[70px] text-xl font-semibold">
+          Admin Dashboard
+        </div>
       </SidebarHeader>
       <SidebarSeparator />
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Management</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => {
@@ -103,7 +102,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       <SidebarInset className="bg-gradient-to-b from-neutral-800 via-neutral-800 to-black/80">
         <div className="flex h-14 items-center gap-2 border-b border-neutral-800/60 px-4 text-white">
           <SidebarTrigger className="cursor-pointer" />
-          <div className="font-semibold">Admin</div>
+          <div className="font-semibold">Collapse/Expand</div>
         </div>
         <main className="p-4 md:p-6">
           {/* Content cards remain light for contrast */}
