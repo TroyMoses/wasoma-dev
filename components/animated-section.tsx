@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { type PropsWithChildren } from "react"
+import { motion } from "framer-motion";
+import { type PropsWithChildren } from "react";
 
 export function AnimatedSection({
   children,
@@ -16,5 +16,5 @@ export function AnimatedSection({
     >
       {children}
     </motion.section>
-  )
+  );
 }

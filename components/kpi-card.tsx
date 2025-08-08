@@ -1,13 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function KpiCard({
   title,
   value,
   icon,
 }: {
-  title: string
-  value: string | number
-  icon?: React.ReactNode
+  title: string;
+  value: string | number;
+  icon?: React.ReactNode;
 }) {
   return (
     <Card className="hover:shadow-lg transition-shadow">
@@ -19,5 +19,5 @@ export function KpiCard({
         <div className="text-2xl font-bold">{value}</div>
       </CardContent>
     </Card>
-  )
+  );
 }
