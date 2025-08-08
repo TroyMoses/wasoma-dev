@@ -18,14 +18,14 @@ import { SiteFooter } from "@/components/site-footer";
 export default function HomePage() {
   return (
     <div>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-red-100/60 via-transparent to-transparent" />
-        <div className="container grid lg:grid-cols-2 gap-8 items-center py-16 md:py-24">
+      <section className="px-5 md:px-10 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-red-400/50 via-transparent to-transparent" />
+        <div className="container grid lg:grid-cols-2 gap-8 items-center py-10 md:py-18">
           <AnimatedSection>
             <Badge className="mb-4 bg-red-600 text-white">
               Trusted Engineering Services
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-[32px] md:text-[38px] font-bold tracking-tight">
               <span className="bg-gradient-to-r from-red-700 via-red-600 to-neutral-800 bg-clip-text text-transparent">
                 Reliable motor and electrical engineering services
               </span>
@@ -40,7 +40,7 @@ export default function HomePage() {
                 asChild
                 className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
               >
-                <Link href="/#services" className="cursor-pointer">
+                <Link href="/services" className="cursor-pointer">
                   Explore Services
                 </Link>
               </Button>
@@ -92,16 +92,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="py-16 md:py-24">
+      <section id="services" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container">
+          <div className="flex flex-col justify-center items-center text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight">
               Our Services
             </h2>
             <p className="mt-2 text-muted-foreground">
               From diagnostics to full rebuilds, we&apos;ve got you covered.
             </p>
           </AnimatedSection>
+
+          </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <AnimatedSection key={s.title}>
@@ -115,7 +118,7 @@ export default function HomePage() {
               </AnimatedSection>
             ))}
           </div>
-          <div className="mt-8">
+          <div className="flex flex-col justify-center items-center mt-8">
             <Button
               asChild
               size="lg"
@@ -130,7 +133,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="py-16 md:py-24">
+      <section id="about" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container grid lg:grid-cols-2 gap-8 items-center">
           <AnimatedSection>
             <Image
@@ -155,6 +158,9 @@ export default function HomePage() {
                 { k: "500+", v: "Motors rewound" },
                 { k: "300+", v: "Water pumps serviced" },
                 { k: "1,000+", v: "Happy clients" },
+                { k: "550+", v: "Motors rewound" },
+                { k: "350+", v: "Water pumps serviced" },
+                { k: "1,500+", v: "Happy clients" },
               ].map((m) => (
                 <div key={m.k} className="flex items-center gap-3">
                   <div className="size-2 rounded-full bg-red-600" />
@@ -178,7 +184,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-red-50/60">
+      <section className="py-10 md:py-18 bg-gradient-to-b from-white to-red-50/60">
         <div className="container text-center">
           <h3 className="text-2xl md:text-3xl font-bold">
             Ready to get started?

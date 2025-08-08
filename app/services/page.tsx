@@ -1,3 +1,4 @@
+import { SiteFooter } from "@/components/site-footer";
 import { Badge } from "@/components/ui/badge";
 import {
   Cable,
@@ -91,48 +92,51 @@ const services: Svc[] = [
 
 export default function ServicesPage() {
   return (
-    <div className="container py-12 md:py-16">
-      <div className="max-w-3xl">
-        <Badge className="mb-3 bg-red-600 text-white">Our Services</Badge>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-          From diagnostics to full rebuilds
-        </h1>
-        <p className="mt-3 text-muted-foreground">
-          We combine rigorous testing, quality components, and experienced
-          engineers to extend equipment life and minimize downtime. Explore our
-          core service areas below.
-        </p>
-      </div>
+    <>
+      <div className="px-5 md:px-10 py-8 md:py-12">
+        <div className="max-w-3xl">
+          <Badge className="mb-3 bg-red-600 text-white">Our Services</Badge>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            From diagnostics to full rebuilds
+          </h1>
+          <p className="mt-3 text-muted-foreground">
+            We combine rigorous testing, quality components, and experienced
+            engineers to extend equipment life and minimize downtime. Explore
+            our core service areas below.
+          </p>
+        </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
-        {services.map((s) => (
-          <div
-            key={s.title}
-            className="rounded-xl border bg-card p-6 hover:shadow-lg transition-shadow"
-          >
-            <div className="size-12 rounded-md bg-red-50 text-red-700 flex items-center justify-center mb-4">
-              {s.icon}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-xl border bg-card p-6 hover:shadow-lg transition-shadow"
+            >
+              <div className="size-12 rounded-md bg-red-50 text-red-700 flex items-center justify-center mb-4">
+                {s.icon}
+              </div>
+              <div className="font-semibold text-lg">{s.title}</div>
+              <p className="mt-2 text-muted-foreground text-sm">{s.desc}</p>
+              <ul className="mt-3 space-y-2 text-sm">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <Wrench className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <Image
+                src={`/abstract-geometric-shapes.png?height=200&width=400&query=${s.imageQuery}`}
+                alt={s.title}
+                width={400}
+                height={200}
+                className="rounded-lg border mt-4 object-cover"
+              />
             </div>
-            <div className="font-semibold text-lg">{s.title}</div>
-            <p className="mt-2 text-muted-foreground text-sm">{s.desc}</p>
-            <ul className="mt-3 space-y-2 text-sm">
-              {s.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2">
-                  <Wrench className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <Image
-              src={`/abstract-geometric-shapes.png?height=200&width=400&query=${s.imageQuery}`}
-              alt={s.title}
-              width={400}
-              height={200}
-              className="rounded-lg border mt-4 object-cover"
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+      <SiteFooter />
+    </>
   );
 }

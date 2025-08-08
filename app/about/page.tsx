@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export default function AboutPage() {
   return (
     <>
-      <div className="container py-12 md:py-16">
+      <div className="px-5 md:px-10 py-8 md:py-12">
         <div className="max-w-3xl">
           <Badge className="mb-3 bg-red-600 text-white">
             About Wasoma Engineering

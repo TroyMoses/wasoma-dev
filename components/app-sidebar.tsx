@@ -66,7 +66,7 @@ export function AppSidebar() {
                       isActive={active}
                       className="data-[active=true]:!bg-red-600/30 data-[active=true]:!text-red-500 data-[active=true]:!font-semibold"
                     >
-                      <Link href={item.href} className="cursor-pointer">
+                      <Link href={item.href} className="cursor-pointer text-[16px]">
                         <item.icon className="shrink-0" />
                         <span>{item.title}</span>
                       </Link>
