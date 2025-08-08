@@ -1,11 +1,18 @@
-import { listWorkers } from "@/app/actions"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { CreateWorkerDialog } from "./worker-create-dialog"
+import { listWorkers } from "@/app/actions";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { CreateWorkerDialog } from "./worker-create-dialog";
 
 export default async function WorkersPage() {
-  const workers = await listWorkers()
+  const workers = await listWorkers();
   return (
     <Card>
       <CardHeader className="flex items-center justify-between flex-row">
@@ -34,10 +41,20 @@ export default async function WorkersPage() {
                   <TableCell>{w.phone || "-"}</TableCell>
                   <TableCell>{w.status || "active"}</TableCell>
                   <TableCell className="text-right">
-                    <Button variant="outline" size="sm" className="cursor-pointer mr-2" disabled>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="cursor-pointer mr-2"
+                      disabled
+                    >
                       Edit
                     </Button>
-                    <Button variant="destructive" size="sm" className="cursor-pointer" disabled>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      className="cursor-pointer"
+                      disabled
+                    >
                       Delete
                     </Button>
                   </TableCell>
@@ -45,7 +62,10 @@ export default async function WorkersPage() {
               ))}
               {workers.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center text-muted-foreground">
+                  <TableCell
+                    colSpan={6}
+                    className="text-center text-muted-foreground"
+                  >
                     No workers yet.
                   </TableCell>
                 </TableRow>
@@ -55,5 +75,5 @@ export default async function WorkersPage() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
