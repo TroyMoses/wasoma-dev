@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Phone } from 'lucide-react'
-import { Brand } from "./brand"
-import { COMPANY_CONTACT } from "@/lib/config"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Phone } from "lucide-react";
+import { Brand } from "./brand";
+import { COMPANY_CONTACT } from "@/lib/config";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const nav = [
   { href: "/", label: "Home" },
-  { href: "/#services", label: "Services" },
-  { href: "/#about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/dashboard", label: "Admin" },
-]
+];
 
 export function SiteHeader() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="px-10 sticky top-0 z-40 w-full border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between">
         <Brand />
         <nav className="hidden md:flex items-center gap-6">
@@ -29,14 +29,17 @@ export function SiteHeader() {
               key={n.href}
               href={n.href}
               className={cn(
-                "text-sm text-muted-foreground hover:text-red-600 transition-colors cursor-pointer",
-                pathname === n.href && "text-foreground font-medium"
+                "text-normal text-muted-foreground hover:text-blue-600 transition-colors cursor-pointer",
+                pathname === n.href && "text-blue-700 font-semibold"
               )}
             >
               {n.label}
             </Link>
           ))}
-          <Button asChild className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+          <Button
+            asChild
+            className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
+          >
             <a href={`tel:${COMPANY_CONTACT.phone.replace(/\s+/g, "")}`}>
               <Phone className="w-4 h-4 mr-2" /> Call Us
             </a>
@@ -45,7 +48,11 @@ export function SiteHeader() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="cursor-pointer">
+              <Button
+                variant="outline"
+                size="icon"
+                className="cursor-pointer bg-transparent"
+              >
                 <Menu className="w-5 h-5" />
                 <span className="sr-only">Open Menu</span>
               </Button>
@@ -56,12 +63,18 @@ export function SiteHeader() {
                   <Link
                     key={n.href}
                     href={n.href}
-                    className="text-base font-medium hover:text-red-600 transition-colors cursor-pointer"
+                    className={cn(
+                      "text-base font-medium hover:text-blue-600 transition-colors cursor-pointer",
+                      pathname === n.href && "text-blue-700"
+                    )}
                   >
                     {n.label}
                   </Link>
                 ))}
-                <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+                <Button
+                  asChild
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
+                >
                   <a href={`tel:${COMPANY_CONTACT.phone.replace(/\s+/g, "")}`}>
                     <Phone className="w-4 h-4 mr-2" /> Call Us
                   </a>
@@ -72,5 +85,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

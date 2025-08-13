@@ -1,11 +1,18 @@
-import { listUsers } from "@/app/actions"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { CreateUserDialog } from "./user-create-dialog"
-import { Button } from "@/components/ui/button"
+import { listUsers } from "@/app/actions";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { CreateUserDialog } from "./user-create-dialog";
+import { Button } from "@/components/ui/button";
 
 export default async function UsersPage() {
-  const users = await listUsers()
+  const users = await listUsers();
   return (
     <Card>
       <CardHeader className="flex items-center justify-between flex-row">
@@ -32,10 +39,20 @@ export default async function UsersPage() {
                   <TableCell>{u.role}</TableCell>
                   <TableCell>{u.status || "active"}</TableCell>
                   <TableCell className="text-right">
-                    <Button variant="outline" size="sm" className="cursor-pointer mr-2" disabled>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="cursor-pointer mr-2"
+                      disabled
+                    >
                       Edit
                     </Button>
-                    <Button variant="destructive" size="sm" className="cursor-pointer" disabled>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      className="cursor-pointer"
+                      disabled
+                    >
                       Delete
                     </Button>
                   </TableCell>
@@ -43,7 +60,10 @@ export default async function UsersPage() {
               ))}
               {users.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={5} className="text-center text-muted-foreground">
+                  <TableCell
+                    colSpan={5}
+                    className="text-center text-muted-foreground"
+                  >
                     No users yet.
                   </TableCell>
                 </TableRow>
@@ -53,5 +73,5 @@ export default async function UsersPage() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
