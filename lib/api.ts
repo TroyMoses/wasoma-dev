@@ -31,8 +31,10 @@ export async function apiFetch<T>(
     }
     const data = (await res.json()) as T;
     return { ok: true, data };
-  } catch (e: any) {
-    return { ok: false, error: e?.message || "Network error" };
+  } catch (error: unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Network error";
+    return { ok: false, error: errorMessage };
   }
 }
 
