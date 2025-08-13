@@ -1,95 +1,12 @@
 import type React from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { Badge } from "@/components/ui/badge";
-import {
-  Cable,
-  Cog,
-  Droplets,
-  Hammer,
-  PowerIcon as Generator,
-  Shield,
-  Wrench,
-} from "lucide-react";
-import Image from "next/image";
+import { ImageCarousel } from "@/components/image-carousel";
+import { GalleryDialog } from "@/components/gallery-dialog";
+import { services } from "./services";
+import { Wrench } from "lucide-react";
 
 export const dynamic = "force-static";
-
-type Svc = {
-  title: string;
-  desc: string;
-  bullets: string[];
-  icon: React.ReactNode;
-  imageQuery: string;
-};
-
-const services: Svc[] = [
-  {
-    title: "Motor Rewinding",
-    desc: "Precision rewinding and reconditioning for AC/DC motors to OEM tolerances.",
-    bullets: [
-      "Insulation class upgrades",
-      "Bearing housing repairs",
-      "VPI and dynamic balancing",
-    ],
-    icon: <Cog className="w-6 h-6" />,
-    imageQuery: "industrial%20electric%20motor%20rewinding%20bench",
-  },
-  {
-    title: "Water Pump Service & Repair",
-    desc: "Performance restoration for centrifugal, submersible, and borehole pumps.",
-    bullets: [
-      "Seal and impeller replacement",
-      "Shaft alignment",
-      "Hydraulic testing",
-    ],
-    icon: <Droplets className="w-6 h-6" />,
-    imageQuery: "water%20pump%20service%20workshop",
-  },
-  {
-    title: "Electrical Installation",
-    desc: "Safe, compliant wiring for commercial and industrial facilities.",
-    bullets: [
-      "Panel builds and cabling",
-      "Earthing and protection",
-      "Compliance documentation",
-    ],
-    icon: <Cable className="w-6 h-6" />,
-    imageQuery: "industrial%20electrical%20panel%20installation",
-  },
-  {
-    title: "Generator Service & Repair",
-    desc: "Preventive maintenance and major overhauls for gensets.",
-    bullets: [
-      "Control panel diagnostics",
-      "Fuel system service",
-      "Load testing and commissioning",
-    ],
-    icon: <Generator className="w-6 h-6" />,
-    imageQuery: "diesel%20generator%20maintenance",
-  },
-  {
-    title: "Welding & Fabrication",
-    desc: "Custom fabrication and repair for industrial applications.",
-    bullets: [
-      "MIG/TIG/ARC welding",
-      "Jigs and fixtures",
-      "Protective coatings",
-    ],
-    icon: <Hammer className="w-6 h-6" />,
-    imageQuery: "industrial%20welding%20and%20fabrication%20shop",
-  },
-  {
-    title: "Machine Service & Repair",
-    desc: "Rotating equipment, balancing, alignments, and precision assemblies.",
-    bullets: [
-      "Laser alignment",
-      "On-site troubleshooting",
-      "Condition monitoring advice",
-    ],
-    icon: <Shield className="w-6 h-6" />,
-    imageQuery: "machine%20maintenance%20technician%20at%20work",
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -126,13 +43,20 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Image
-                src={`/abstract-geometric-shapes.png?height=200&width=400&query=${s.imageQuery}`}
-                alt={s.title}
-                width={400}
-                height={200}
-                className="rounded-lg border mt-4 object-cover"
-              />
+
+              <div className="mt-4">
+                <ImageCarousel
+                  images={s.images}
+                  className="rounded-lg border aspect-video"
+                  autoPlay={true}
+                  interval={4000}
+                  showControls={false}
+                />
+              </div>
+
+              <div className="mt-4 flex justify-center">
+                <GalleryDialog images={s.galleryImages} title={s.title} />
+              </div>
             </div>
           ))}
         </div>
