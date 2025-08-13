@@ -22,17 +22,22 @@ import { NewsletterSection } from "@/components/newsletter-section";
 export default function HomePage() {
   const aboutImages = [
     {
-      src: "/industrial-workshop-engineers.png",
+      src: "/images/home/services/pepsi.jpeg",
       alt: "Engineers at work in workshop",
     },
     {
-      src: "/electrical-motor-repair.png",
+      src: "/images/home/services/engineer-repair-workshop.jpeg",
+      alt: "Motor repair and maintenance",
+    },
+    {
+      src: "/images/home/services/engineer-repair-workshop2.jpeg",
       alt: "Motor repair and maintenance",
     },
   ];
 
   return (
     <div>
+      {/* Hero section */}
       <section className="px-5 md:px-10 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400/50 via-transparent to-transparent" />
         <div className="container grid lg:grid-cols-2 gap-8 items-center py-10 md:py-18">
@@ -86,7 +91,7 @@ export default function HomePage() {
           <AnimatedSection delay={0.1}>
             <div className="relative">
               <Image
-                src="/engineering-workshop.png"
+                src="/images/home/hero/hero.jpeg"
                 width={900}
                 height={700}
                 alt="Workshop - engineering services"
@@ -107,6 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services section */}
       <section id="services" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container">
           <div className="flex flex-col justify-center items-center text-center">

@@ -28,7 +28,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
+    <section className="py-3 md:py-5 bg-gradient-to-r from-blue-600 to-blue-700">
       <div className="container px-5 md:px-10">
         <Card className="max-w-2xl mx-auto bg-white/95 backdrop-blur">
           <CardContent className="p-8 text-center">
