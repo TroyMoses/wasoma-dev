@@ -20,7 +20,7 @@ export default function HomePage() {
     <div>
       <section className="px-5 md:px-10 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400/50 via-transparent to-transparent" />
-        <div className="container grid lg:grid-cols-2 gap-8 items-center py-10 md:py-18">
+        <div className="container grid lg:grid-cols-2 gap-8 items-center pb-10 md:pb-18 pt-4 md:pt-12">
           <AnimatedSection>
             <Badge className="mb-4 bg-blue-600 text-white">
               Trusted Engineering Services
@@ -71,7 +71,7 @@ export default function HomePage() {
           <AnimatedSection delay={0.1}>
             <div className="relative">
               <Image
-                src="/images/hero.png"
+                src="/images/home/hero.jpeg"
                 width={900}
                 height={700}
                 alt="Workshop - engineering services"
