@@ -30,7 +30,7 @@ export function CreateReceiptDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
           Add Receipt
         </Button>
       </DialogTrigger>
@@ -73,7 +73,7 @@ export function CreateReceiptDialog() {
           <Button
             type="submit"
             form="createReceipt"
-            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
             disabled={pending}
           >
             {pending ? "Saving..." : "Save"}

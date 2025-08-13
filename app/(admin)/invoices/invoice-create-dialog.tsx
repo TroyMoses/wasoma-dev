@@ -37,7 +37,7 @@ export function CreateInvoiceDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
           Add Invoice
         </Button>
       </DialogTrigger>
@@ -99,7 +99,7 @@ export function CreateInvoiceDialog() {
           <Button
             type="submit"
             form="createInvoice"
-            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
             disabled={pending}
           >
             {pending ? "Saving..." : "Save"}

@@ -37,7 +37,7 @@ export function CreateUserDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
           Add User
         </Button>
       </DialogTrigger>
@@ -84,7 +84,7 @@ export function CreateUserDialog() {
           <Button
             type="submit"
             form="createUser"
-            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
             disabled={pending}
           >
             {pending ? "Saving..." : "Save"}

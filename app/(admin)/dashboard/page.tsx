@@ -25,22 +25,22 @@ export default async function DashboardPage() {
         <KpiCard
           title="New Contacts"
           value={contacts.length}
-          icon={<Inbox className="text-red-600" />}
+          icon={<Inbox className="text-blue-600" />}
         />
         <KpiCard
           title="Orders"
           value={orders.length}
-          icon={<ShoppingCart className="text-red-600" />}
+          icon={<ShoppingCart className="text-blue-600" />}
         />
         <KpiCard
           title="Pending Orders"
           value={pendingOrders}
-          icon={<ClipboardList className="text-red-600" />}
+          icon={<ClipboardList className="text-blue-600" />}
         />
         <KpiCard
           title="Paid Invoices (sum)"
           value={`$${paidInvoices.toFixed(2)}`}
-          icon={<BadgeDollarSign className="text-red-600" />}
+          icon={<BadgeDollarSign className="text-blue-600" />}
         />
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
