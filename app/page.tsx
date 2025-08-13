@@ -12,16 +12,30 @@ import {
   Shield,
   Hammer,
   Sparkles,
+  Waves,
+  Settings,
 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { ImageCarousel } from "@/components/image-carousel";
+import { NewsletterSection } from "@/components/newsletter-section";
 
 export default function HomePage() {
+  const aboutImages = [
+    {
+      src: "/industrial-workshop-engineers.png",
+      alt: "Engineers at work in workshop",
+    },
+    {
+      src: "/electrical-motor-repair.png",
+      alt: "Motor repair and maintenance",
+    },
+  ];
+
   return (
     <div>
-      {/* Hero section */}
       <section className="px-5 md:px-10 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400/50 via-transparent to-transparent" />
-        <div className="container grid lg:grid-cols-2 gap-8 items-center pb-10 md:pb-18 pt-4 md:pt-12">
+        <div className="container grid lg:grid-cols-2 gap-8 items-center py-10 md:py-18">
           <AnimatedSection>
             <Badge className="mb-4 bg-blue-600 text-white">
               Trusted Engineering Services
@@ -72,7 +86,7 @@ export default function HomePage() {
           <AnimatedSection delay={0.1}>
             <div className="relative">
               <Image
-                src="/images/home/hero.jpeg"
+                src="/engineering-workshop.png"
                 width={900}
                 height={700}
                 alt="Workshop - engineering services"
@@ -93,7 +107,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services section */}
       <section id="services" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container">
           <div className="flex flex-col justify-center items-center text-center">
@@ -106,7 +119,7 @@ export default function HomePage() {
               </p>
             </AnimatedSection>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <AnimatedSection key={s.title}>
                 <div className="group rounded-xl border bg-background p-6 hover:shadow-lg hover:border-blue-200 transition-all">
@@ -137,12 +150,11 @@ export default function HomePage() {
       <section id="about" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container grid lg:grid-cols-2 gap-8 items-center">
           <AnimatedSection>
-            <Image
-              src="/images/home/engineer-repair-workshop.jpeg"
-              width={700}
-              height={520}
-              alt="Engineers at work"
-              className="rounded-xl border shadow-sm object-cover"
+            <ImageCarousel
+              images={aboutImages}
+              className="border shadow-sm aspect-[4/3]"
+              autoPlay={true}
+              interval={5000}
             />
           </AnimatedSection>
           <AnimatedSection delay={0.05}>
@@ -159,9 +171,9 @@ export default function HomePage() {
                 { k: "500+", v: "Motors rewound" },
                 { k: "300+", v: "Water pumps serviced" },
                 { k: "1,000+", v: "Happy clients" },
-                { k: "550+", v: "Motors rewound" },
-                { k: "350+", v: "Water pumps serviced" },
-                { k: "1,500+", v: "Happy clients" },
+                { k: "50+", v: "Pool systems maintained" },
+                { k: "200+", v: "Compressors serviced" },
+                { k: "15+", v: "Years of experience" },
               ].map((m) => (
                 <div key={m.k} className="flex items-center gap-3">
                   <div className="size-2 rounded-full bg-blue-600" />
@@ -184,6 +196,8 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      <NewsletterSection />
 
       <section className="py-10 md:py-18 bg-gradient-to-b from-white to-blue-50/60">
         <div className="container text-center">
@@ -241,5 +255,15 @@ const services = [
     title: "Machine Service & Repair",
     desc: "Rotating equipment, balancing, bearings, alignments.",
     icon: <Shield className="w-6 h-6" />,
+  },
+  {
+    title: "Swimming Pool Service",
+    desc: "Pool pump maintenance, filtration systems, and repairs.",
+    icon: <Waves className="w-6 h-6" />,
+  },
+  {
+    title: "Danfoss Compressors",
+    desc: "Specialized service for Danfoss and other compressor brands.",
+    icon: <Settings className="w-6 h-6" />,
   },
 ];
