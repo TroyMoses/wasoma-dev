@@ -43,7 +43,7 @@ export function NewsletterSection() {
 
             <form
               onSubmit={handleSubmit}
-              className="flex gap-3 max-w-md mx-auto"
+              className="flex flex-col md:flex-row gap-3 max-w-md mx-auto"
             >
               <Input
                 type="email"
