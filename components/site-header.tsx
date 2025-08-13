@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu, Phone } from "lucide-react";
 import { Brand } from "./brand";
 import { COMPANY_CONTACT } from "@/lib/config";
@@ -57,14 +63,17 @@ export function SiteHeader() {
                 <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col gap-4 mt-4">
+            <SheetContent side="right" className="px-4">
+              <SheetHeader>
+                <h2 className="text-lg font-semibold">Menu</h2>
+              </SheetHeader>
+              <div className="flex flex-col gap-4">
                 {nav.map((n) => (
                   <Link
                     key={n.href}
                     href={n.href}
                     className={cn(
-                      "text-base font-medium hover:text-blue-600 transition-colors cursor-pointer",
+                      "text-base ml-4 font-medium hover:text-blue-600 transition-colors cursor-pointer",
                       pathname === n.href && "text-blue-700"
                     )}
                   >
@@ -80,6 +89,12 @@ export function SiteHeader() {
                   </a>
                 </Button>
               </div>
+              <SheetFooter>
+                <div className="text-sm text-muted-foreground mt-2">
+                  © {new Date().getFullYear()} {COMPANY_CONTACT.name}. All
+                  rights reserved.
+                </div>
+              </SheetFooter>
             </SheetContent>
           </Sheet>
         </div>
