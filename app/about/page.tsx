@@ -27,7 +27,7 @@ export default function AboutPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2 items-center">
           <Image
-            src="/industrial-workshop-engineers.png"
+            src="/images/home/services/engineer-repair-workshop.jpeg"
             alt="Our workshop"
             width={700}
             height={520}
