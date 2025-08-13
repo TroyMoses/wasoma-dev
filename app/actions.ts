@@ -3,7 +3,6 @@
 import { revalidatePath } from "next/cache";
 import { apiFetch } from "@/lib/api";
 import type {
-  ApiResult,
   ContactMessage,
   StockItem,
   Worker,
@@ -20,7 +19,7 @@ export async function listContacts(): Promise<ContactMessage[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createContactAction(_: any, formData: FormData) {
+export async function createContactAction(_: unknown, formData: FormData) {
   const payload = {
     name: String(formData.get("name") || ""),
     email: String(formData.get("email") || ""),
@@ -37,7 +36,7 @@ export async function createContactAction(_: any, formData: FormData) {
   return { ok: true };
 }
 
-export async function updateContactAction(_: any, formData: FormData) {
+export async function updateContactAction(_: unknown, formData: FormData) {
   const id = String(formData.get("id") || "");
   const payload = {
     status: String(formData.get("status") || ""),
@@ -64,7 +63,7 @@ export async function listStock(): Promise<StockItem[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createStockAction(_: any, formData: FormData) {
+export async function createStockAction(_: unknown, formData: FormData) {
   const payload = {
     name: String(formData.get("name") || ""),
     sku: String(formData.get("sku") || ""),
@@ -95,7 +94,7 @@ export async function listWorkers(): Promise<Worker[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createWorkerAction(_: any, formData: FormData) {
+export async function createWorkerAction(_: unknown, formData: FormData) {
   const payload = {
     name: String(formData.get("name") || ""),
     role: String(formData.get("role") || ""),
@@ -125,7 +124,7 @@ export async function listUsers(): Promise<User[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createUserAction(_: any, formData: FormData) {
+export async function createUserAction(_: unknown, formData: FormData) {
   const payload = {
     name: String(formData.get("name") || ""),
     email: String(formData.get("email") || ""),
@@ -154,7 +153,7 @@ export async function listOrders(): Promise<Order[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createOrderAction(_: any, formData: FormData) {
+export async function createOrderAction(_: unknown, formData: FormData) {
   const payload = {
     customer_name: String(formData.get("customer_name") || ""),
     description: String(formData.get("description") || ""),
@@ -183,7 +182,7 @@ export async function listInvoices(): Promise<Invoice[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createInvoiceAction(_: any, formData: FormData) {
+export async function createInvoiceAction(_: unknown, formData: FormData) {
   const payload = {
     order_id: String(formData.get("order_id") || ""),
     customer_name: String(formData.get("customer_name") || ""),
@@ -213,7 +212,7 @@ export async function listReceipts(): Promise<Receipt[]> {
   return res.ok && res.data ? res.data : [];
 }
 
-export async function createReceiptAction(_: any, formData: FormData) {
+export async function createReceiptAction(_: unknown, formData: FormData) {
   const payload = {
     invoice_id: String(formData.get("invoice_id") || ""),
     customer_name: String(formData.get("customer_name") || ""),
