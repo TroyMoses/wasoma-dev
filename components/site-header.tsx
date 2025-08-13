@@ -29,8 +29,8 @@ export function SiteHeader() {
               key={n.href}
               href={n.href}
               className={cn(
-                "text-normal text-muted-foreground hover:text-red-600 transition-colors cursor-pointer",
-                pathname === n.href && "text-red-700 font-semibold"
+                "text-normal text-muted-foreground hover:text-blue-600 transition-colors cursor-pointer",
+                pathname === n.href && "text-blue-700 font-semibold"
               )}
             >
               {n.label}
@@ -38,7 +38,7 @@ export function SiteHeader() {
           ))}
           <Button
             asChild
-            className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
           >
             <a href={`tel:${COMPANY_CONTACT.phone.replace(/\s+/g, "")}`}>
               <Phone className="w-4 h-4 mr-2" /> Call Us
@@ -48,7 +48,11 @@ export function SiteHeader() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="cursor-pointer">
+              <Button
+                variant="outline"
+                size="icon"
+                className="cursor-pointer bg-transparent"
+              >
                 <Menu className="w-5 h-5" />
                 <span className="sr-only">Open Menu</span>
               </Button>
@@ -60,8 +64,8 @@ export function SiteHeader() {
                     key={n.href}
                     href={n.href}
                     className={cn(
-                      "text-base font-medium hover:text-red-600 transition-colors cursor-pointer",
-                      pathname === n.href && "text-red-700"
+                      "text-base font-medium hover:text-blue-600 transition-colors cursor-pointer",
+                      pathname === n.href && "text-blue-700"
                     )}
                   >
                     {n.label}
@@ -69,7 +73,7 @@ export function SiteHeader() {
                 ))}
                 <Button
                   asChild
-                  className="w-full bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
                 >
                   <a href={`tel:${COMPANY_CONTACT.phone.replace(/\s+/g, "")}`}>
                     <Phone className="w-4 h-4 mr-2" /> Call Us

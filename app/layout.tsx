@@ -19,7 +19,7 @@ export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-neutral-50 via-red-50/30 to-neutral-50">
+        <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-neutral-50 via-blue-50/30 to-neutral-50">
           <SiteHeader />
           <div className="flex-1">{children}</div>
           {/* <SiteFooter /> */}

@@ -10,7 +10,7 @@ export default function AboutPage() {
     <>
       <div className="px-5 md:px-10 py-8 md:py-12">
         <div className="max-w-3xl">
-          <Badge className="mb-3 bg-red-600 text-white">
+          <Badge className="mb-3 bg-blue-600 text-white">
             About Wasoma Engineering
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -38,17 +38,17 @@ export default function AboutPage() {
             <ul className="space-y-3 text-sm">
               {[
                 {
-                  icon: <Shield className="w-4 h-4 text-red-600" />,
+                  icon: <Shield className="w-4 h-4 text-blue-600" />,
                   title: "Safety first",
                   desc: "We follow strict safety protocols across all projects.",
                 },
                 {
-                  icon: <Wrench className="w-4 h-4 text-red-600" />,
+                  icon: <Wrench className="w-4 h-4 text-blue-600" />,
                   title: "Precision workmanship",
                   desc: "OEM-grade standards with traceable quality checks.",
                 },
                 {
-                  icon: <Handshake className="w-4 h-4 text-red-600" />,
+                  icon: <Handshake className="w-4 h-4 text-blue-600" />,
                   title: "Customer commitment",
                   desc: "Clear communication, transparent pricing, and on-time delivery.",
                 },
@@ -93,7 +93,7 @@ export default function AboutPage() {
               "End-to-end service: inspection, repair, commissioning",
             ].map((b) => (
               <li key={b} className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                 <span>{b}</span>
               </li>
             ))}

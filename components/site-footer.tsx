@@ -19,7 +19,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href="/#services"
-                className="hover:text-red-400 transition-colors cursor-pointer"
+                className="hover:text-blue-400 transition-colors cursor-pointer"
               >
                 Services
               </Link>
@@ -27,7 +27,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href="/contact"
-                className="hover:text-red-400 transition-colors cursor-pointer"
+                className="hover:text-blue-400 transition-colors cursor-pointer"
               >
                 Contact
               </Link>
@@ -35,7 +35,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href="/dashboard"
-                className="hover:text-red-400 transition-colors cursor-pointer"
+                className="hover:text-blue-400 transition-colors cursor-pointer"
               >
                 Admin
               </Link>

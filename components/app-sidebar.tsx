@@ -1,12 +1,13 @@
 "use client";
 
+import type React from "react";
+
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
@@ -64,9 +65,12 @@ export function AppSidebar() {
                     <SidebarMenuButton
                       asChild
                       isActive={active}
-                      className="data-[active=true]:!bg-red-600/30 data-[active=true]:!text-red-500 data-[active=true]:!font-semibold"
+                      className="data-[active=true]:!bg-blue-600/30 data-[active=true]:!text-blue-500 data-[active=true]:!font-semibold"
                     >
-                      <Link href={item.href} className="cursor-pointer text-[16px]">
+                      <Link
+                        href={item.href}
+                        className="cursor-pointer text-[16px]"
+                      >
                         <item.icon className="shrink-0" />
                         <span>{item.title}</span>
                       </Link>
@@ -82,7 +86,7 @@ export function AppSidebar() {
         <Button
           asChild
           variant="outline"
-          className="w-full cursor-pointer hover:text-red-600"
+          className="w-full cursor-pointer hover:text-blue-600 bg-transparent"
         >
           <Link href="/" className="cursor-pointer">
             Back to site

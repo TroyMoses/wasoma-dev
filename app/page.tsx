@@ -19,14 +19,14 @@ export default function HomePage() {
   return (
     <div>
       <section className="px-5 md:px-10 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-red-400/50 via-transparent to-transparent" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400/50 via-transparent to-transparent" />
         <div className="container grid lg:grid-cols-2 gap-8 items-center py-10 md:py-18">
           <AnimatedSection>
-            <Badge className="mb-4 bg-red-600 text-white">
+            <Badge className="mb-4 bg-blue-600 text-white">
               Trusted Engineering Services
             </Badge>
             <h1 className="text-[32px] md:text-[38px] font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-red-700 via-red-600 to-neutral-800 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-neutral-800 bg-clip-text text-transparent">
                 Reliable motor and electrical engineering services
               </span>
             </h1>
@@ -38,7 +38,7 @@ export default function HomePage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Button
                 asChild
-                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+                className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
               >
                 <Link href="/services" className="cursor-pointer">
                   Explore Services
@@ -47,7 +47,7 @@ export default function HomePage() {
               <Button
                 asChild
                 variant="outline"
-                className="cursor-pointer border-red-200 text-red-700 hover:bg-red-50"
+                className="cursor-pointer border-blue-200 text-blue-700 hover:bg-blue-50 bg-transparent"
               >
                 <Link href="/contact" className="cursor-pointer">
                   Get a Quote
@@ -62,7 +62,7 @@ export default function HomePage() {
                 "Warranty on service",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-red-600" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
                   {t}
                 </li>
               ))}
@@ -79,7 +79,7 @@ export default function HomePage() {
                 priority
               />
               <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur rounded-lg p-4 shadow-md hidden sm:flex items-center gap-3">
-                <Sparkles className="text-red-500" />
+                <Sparkles className="text-blue-500" />
                 <div className="text-sm">
                   <div className="font-medium">ISO-inspired workmanship</div>
                   <div className="text-muted-foreground">
@@ -95,21 +95,20 @@ export default function HomePage() {
       <section id="services" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container">
           <div className="flex flex-col justify-center items-center text-center">
-          <AnimatedSection>
-            <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight">
-              Our Services
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              From diagnostics to full rebuilds, we&apos;ve got you covered.
-            </p>
-          </AnimatedSection>
-
+            <AnimatedSection>
+              <h2 className="text-center text-3xl md:text-4xl font-bold tracking-tight">
+                Our Services
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                From diagnostics to full rebuilds, we&apos;ve got you covered.
+              </p>
+            </AnimatedSection>
           </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <AnimatedSection key={s.title}>
-                <div className="group rounded-xl border bg-background p-6 hover:shadow-lg hover:border-red-200 transition-all">
-                  <div className="size-12 rounded-md bg-red-50 text-red-700 flex items-center justify-center mb-4">
+                <div className="group rounded-xl border bg-background p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+                  <div className="size-12 rounded-md bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
                     {s.icon}
                   </div>
                   <div className="font-semibold text-lg">{s.title}</div>
@@ -123,7 +122,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="cursor-pointer border-red-200 text-red-700 hover:bg-red-50"
+              className="cursor-pointer border-blue-200 text-blue-700 hover:bg-blue-50 bg-transparent"
             >
               <Link href="/services" className="cursor-pointer">
                 More Services
@@ -163,7 +162,7 @@ export default function HomePage() {
                 { k: "1,500+", v: "Happy clients" },
               ].map((m) => (
                 <div key={m.k} className="flex items-center gap-3">
-                  <div className="size-2 rounded-full bg-red-600" />
+                  <div className="size-2 rounded-full bg-blue-600" />
                   <div className="font-semibold">{m.k}</div>
                   <div className="text-muted-foreground">{m.v}</div>
                 </div>
@@ -173,7 +172,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+                className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
               >
                 <Link href="/about" className="cursor-pointer">
                   More About Us
@@ -184,7 +183,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-18 bg-gradient-to-b from-white to-red-50/60">
+      <section className="py-10 md:py-18 bg-gradient-to-b from-white to-blue-50/60">
         <div className="container text-center">
           <h3 className="text-2xl md:text-3xl font-bold">
             Ready to get started?
@@ -196,7 +195,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
             >
               <Link href="/contact" className="cursor-pointer">
                 Contact Us

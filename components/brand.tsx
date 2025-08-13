@@ -11,7 +11,7 @@ export function Brand({ className }: { className?: string }) {
       href="/"
       className={cn("flex items-center gap-2 cursor-pointer", className)}
     >
-      <div className="size-9 rounded-lg bg-red-600 text-white flex items-center justify-center shadow-md">
+      <div className="size-9 rounded-lg bg-blue-600 text-white flex items-center justify-center shadow-md">
         <Wrench className="w-5 h-5" />
       </div>
       <span className="font-semibold tracking-tight">{APP_NAME}</span>
