@@ -18,6 +18,7 @@ import { SiteFooter } from "@/components/site-footer";
 export default function HomePage() {
   return (
     <div>
+      {/* Hero section */}
       <section className="px-5 md:px-10 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-400/50 via-transparent to-transparent" />
         <div className="container grid lg:grid-cols-2 gap-8 items-center pb-10 md:pb-18 pt-4 md:pt-12">
@@ -92,6 +93,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services section */}
       <section id="services" className="px-5 md:px-10 py-10 md:py-18">
         <div className="container">
           <div className="flex flex-col justify-center items-center text-center">
@@ -136,7 +138,7 @@ export default function HomePage() {
         <div className="container grid lg:grid-cols-2 gap-8 items-center">
           <AnimatedSection>
             <Image
-              src="/engineer-repair-workshop.png"
+              src="/images/home/engineer-repair-workshop.jpeg"
               width={700}
               height={520}
               alt="Engineers at work"

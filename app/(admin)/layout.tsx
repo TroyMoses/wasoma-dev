@@ -21,7 +21,7 @@ export default function AdminLayout({
     // Theme the sidebar via its CSS variables (dark with blue accents) per the component API.
     <div
       style={{
-        //@ts-expect-error
+        // @ts-expect-error TODO: This is a temporary workaround for a type issue.
         "--sidebar-background": "0 0% 6%", // near-black
         "--sidebar-foreground": "0 0% 98%",
         "--sidebar-primary": "210 100% 50%", // blue-500-ish
